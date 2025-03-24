@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinnamon Secrets</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <!-- Insert your logo here -->
+            <img src="logo.JPEG" alt="Cinnamon Secrets Logo" class="logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h1>Welcome to Cinnamon Secrets</h1>
+            <p>Your go-to bakery for the most irresistible cinnamon rolls in town!</p>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <ul>
+                <li onclick="showImage('classic.JPEG')">Classic Cinnamon Rolls</li>
+                <li onclick="showImage('pumpkin.jpg')">Pumpkin Cinnamon Rolls</li>
+                <li onclick="showImage('easter.jpg')">Easter Cinnamon Rolls</li>
+                <li onclick="showImage('valentines.jpg')">Valentines Cinnamon Rolls</li>
+            </ul>
+            <div class="image-display">
+                <img id="menu-image" src="" alt="Menu item image">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At Cinnamon Secrets, we believe in creating mouthwatering cinnamon rolls that are baked with love. Come
+                for the secrets, stay for the flavor!</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial">
+                <p>"The cinnamon rolls here are the best I've ever had! Highly recommend." - Jane D.</p>
+            </div>
+            <div class="testimonial">
+                <p>"Cinnamon Secrets makes magic happen in every bite. I'll be back for more!" - John D.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cinnamon Secrets. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>
