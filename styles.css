@@ -23,10 +23,34 @@ header {
     border-radius: 8px;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
     gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Hide the menu on small screens initially */
+.menu-toggle {
+    display: none;
+    background-color: #f2b3e1;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 .nav-links li a {
@@ -104,4 +128,83 @@ button {
     border: 1px solid #26011C;
     border-radius: 8px;
     margin-bottom: 10px;
+}
+
+/* For devices with a width of 600px or smaller */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+        /* Smaller text for small screens */
+        padding: 10px;
+        /* Reduce padding */
+    }
+
+    header {
+        flex-direction: row;
+        /* Stack logo and navigation vertically */
+        text-align: center;
+    }
+
+    .nav-links li a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 20px;
+    }
+
+    .nav-links {
+        display: none;
+        /* Initially hidden */
+        flex-direction: column;
+        /* Stack items vertically */
+        background-color: #f2b3e1;
+        position: middle;
+        /* Position dropdown below the button */
+        top: 125px;
+        /* Adjust to align with the button */
+        width: 100%;
+        /* Full width for smaller screens */
+        z-index: 1000;
+        /* Ensure it appears above other elements */
+        border-radius: 8px;
+    }
+
+    .nav-links.active {
+        display: flex;
+        /* Show menu when active */
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Show button on small screens */
+        background-color: #f2b3e1;
+        color: black;
+        border: none;
+        padding: 10px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .logo {
+        height: 150px;
+        /* Adjust logo size for small screens */
+    }
+
+    section {
+        margin-bottom: 20px;
+        /* Decrease spacing */
+    }
+
+    form {
+        width: 100%;
+        /* Make the form take full width on small screens */
+        padding: none;
+    }
+
+    #menu-image {
+        max-width: 100%;
+        min-width: 200px;
+        /* Ensure menu images fit within the screen */
+        height: auto;
+    }
 }
