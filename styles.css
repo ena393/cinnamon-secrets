@@ -36,9 +36,35 @@ img {
     padding: 0;
 }
 
+.nav-links li {
+    display: inline-block;
+    /* Ensure the boxes wrap around the text */
+    padding: 10px 15px;
+    /* Add spacing inside the boxes */
+    background-color: #F2B3E1;
+    /* Cinnamon-inspired color */
+    color: black;
+    /* Text color */
+    border: 2px solid #26011C;
+    /* Add a border to highlight the clickable box */
+    border-radius: 5px;
+    /* Slight rounding for aesthetics */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.nav-links li:hover {
+    background-color: #F2C4E6;
+    /* Lighten the color on hover */
+    transform: scale(1.02);
+    /* Slightly enlarge the box on hover */
+    cursor: pointer;
+    /* Change the cursor to indicate interactivity */
+}
+
 .nav-links li a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-weight: bold;
 }
 
@@ -53,18 +79,64 @@ img {
     cursor: pointer;
 }
 
-.nav-links li a {
-    text-decoration: none;
-    color: #F2C4E6;
-    font-weight: bold;
-}
-
 main {
     padding: 20px;
 }
 
 section {
     margin-bottom: 40px;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-items {
+    max-width: 40%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* Space between items */
+}
+
+.menu-item {
+    padding: 10px 15px;
+    /* Add space inside the box */
+    background-color: #F2B3E1;
+    /* Cinnamon-inspired color */
+    border: 2px solid #26011C;
+    /* Border for clickable boxes */
+    color: black;
+    /* Text color */
+    border-radius: 5px;
+    /* Slight rounding for aesthetics */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Smooth hover effect */
+    cursor: pointer;
+    /* Pointer cursor to indicate interactivity */
+    text-align: center;
+    /* Center the text */
+}
+
+.menu-item:hover {
+    background-color: #F2C4E6;
+    /* Lighten the box color on hover */
+    transform: scale(1.02);
+    /* Slightly enlarge the box */
 }
 
 .image-display {
@@ -78,6 +150,14 @@ section {
     display: none;
     border: 2px solid #26011C;
     border-radius: 8px;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 footer {
@@ -96,15 +176,20 @@ footer {
 }
 
 .social-links i:hover {
-    color: #ffe4c4;
+    color: #F2B3E1;
     /* Change color on hover */
 }
 
 /* Contact Form Styling */
-form {
-    max-width: 400px;
-    margin: auto;
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
+
 
 label {
     display: block;
@@ -115,23 +200,45 @@ input,
 textarea,
 button {
     width: 100%;
+    padding: 10px;
     margin-bottom: 15px;
     background-color: #F2C4E6;
     border: 1px solid #26011C;
     border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+button:hover {
+    transform: scale(1.02);
 }
 
 /* Testimonials */
+#testimonials {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .testimonial {
     background-color: #F2C4E6;
     padding: 10px;
     border: 1px solid #26011C;
     border-radius: 8px;
     margin-bottom: 10px;
+    transition: transform 0.3s ease;
 }
 
+.testimonial:hover {
+    transform: scale(1.02);
+}
+
+
 /* For devices with a width of 600px or smaller */
-@media (max-width: 600px) {
+@media (max-width: 750px) {
     body {
         font-size: 14px;
         /* Smaller text for small screens */
@@ -157,7 +264,7 @@ button {
         /* Initially hidden */
         flex-direction: column;
         /* Stack items vertically */
-        background-color: #f2b3e1;
+        background-color: #26011C;
         position: middle;
         /* Position dropdown below the button */
         top: 125px;
