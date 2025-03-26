@@ -1,10 +1,26 @@
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: white;
+    background-color: #fdfdfd;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #26011C;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
 }
 
 /* Header */
@@ -15,12 +31,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
 .logo {
-    height: 160px;
-    width: auto;
+    height: 140px;
     border-radius: 8px;
 }
 
@@ -33,18 +52,18 @@ img {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 20px;
     margin: 0;
     padding: 0;
 }
 
 .nav-links li {
     display: inline-block;
-    padding: 10px 15px;
+    padding: 10px 20px;
     background-color: #F2B3E1;
     color: black;
     border: 2px solid #26011C;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -73,20 +92,22 @@ img {
 
 /* Main Content */
 main {
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    padding: 20px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Home Section */
 #home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background: linear-gradient(to bottom, #f2b3e1, #f2c4e6);
     text-align: center;
+    padding: 60px 20px;
 }
 
 /* Menu Section */
@@ -108,11 +129,10 @@ section {
 }
 
 .menu-item {
-    padding: 10px 15px;
+    padding: 20px;
     background-color: #F2B3E1;
     border: 2px solid #26011C;
-    color: black;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     cursor: pointer;
     text-align: center;
@@ -138,6 +158,13 @@ section {
 }
 
 /* About Section */
+
+#about {
+    background: linear-gradient(to bottom, #f2b3e1, #f2c4e6);
+    text-align: center;
+    padding: 60px 20px;
+}
+
 #about {
     display: flex;
     flex-direction: column;

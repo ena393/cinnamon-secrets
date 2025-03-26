@@ -9,22 +9,19 @@ function showImage(imageFileName) {
     const imageElement = document.getElementById("menu-image");
     imageElement.src = imageFileName;
     imageElement.style.display = "block";
+    imageElement.classList.add("fade-in");
+    setTimeout(() => imageElement.classList.remove("fade-in"), 500);
 }
 
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
-
-    document.addEventListener('click', closeMenuOnClickOutside);
 }
 
-function closeMenuOnClickOutside(event) {
+document.addEventListener('click', function (event) {
     const navLinks = document.querySelector('.nav-links');
     const menuToggle = document.querySelector('.menu-toggle');
-
-    // Check if the clicked element is outside the menu and button
     if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
-        navLinks.classList.remove('active'); // Collapse the menu
-        document.removeEventListener('click', closeMenuOnClickOutside); // Remove listener
+        navLinks.classList.remove('active');
     }
-}
+});
