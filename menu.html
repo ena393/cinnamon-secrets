@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinnamon Secrets - Menu & Contact</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <!-- Font Awesome and Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <link rel="icon" href="icon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo-container">
+        <img src="logo_cropped.JPEG" alt="Cinnamon Secrets Logo" class="logo">
+      </div>
+      <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu & Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+      <h2>Our Menu</h2>
+      <p>Click an item to view details.</p>
+      <div class="menu-grid">
+        <div class="menu-item" data-image="classic.jpeg">Classic Cinnamon Rolls</div>
+        <div class="menu-item" data-image="pumpkin.jpg">Pumpkin Cinnamon Rolls</div>
+        <div class="menu-item" data-image="vanilla_cp.jpg">Vanilla Cake Pops</div>
+        <div class="menu-item" data-image="chocolate_cp.jpg">Chocolate Cake Pops</div>
+        <div class="menu-item" data-image="candc_cp.jpg">Cookies & Cream Cake Pops</div>
+        <div class="menu-item" data-image="rv_cp.jpg">Red Velvet Cake Pops</div>
+        <div class="menu-item" data-image="cd_cp.jpg">Cookie Dough Cake Pops</div>
+      </div>
+      <!-- Image Modal -->
+      <div class="image-modal" id="image-modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img id="modal-image" src="" alt="Menu Item Preview">
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2>Order Here, or Ask Questions!</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="4" placeholder="Enter your order or questions" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Cinnamon Secrets. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.instagram.com/bakedbycinnamonsecrets?igsh=MTRocXM0dGlwa2Y5Zg==" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- EmailJS Script Initialization -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("2dfz6Na_INznDegs6");
+    })();
+  </script>
+</body>
+</html>

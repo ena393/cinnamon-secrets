@@ -1,117 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinnamon Secrets</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinnamon Secrets - Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <!-- Font Awesome and Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <link rel="icon" href="icon.ico" type="image/x-icon">
 </head>
-
 <body>
-    <header>
-        <div class="logo-container">
-            <!-- Insert your logo here -->
-            <img src="logo_cropped.JPEG" alt="Cinnamon Secrets Logo" class="logo">
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo-container">
+        <img src="logo_cropped.JPEG" alt="Cinnamon Secrets Logo" class="logo">
+      </div>
+      <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu & Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Discover Cinnamon Secrets</h1>
+        <p>Where every bite tells a story of love and tradition. Experience our irresistible treats!</p>
+        <a href="menu.html" class="btn">Explore Menu</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <h2>About Cinnamon Secrets</h2>
+      <p>
+        At Cinnamon Secrets, every treat is a masterpiece. We blend age-old recipes with modern passion to create baked goods that stir the soul. Indulge in our story with every bite.
+      </p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+      <h2>What Our Customers Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <p>"These huge cinnamon rolls really hit the spot for me! They're perfect for gatherings or even just a hearty breakfast!"</p>
+          <span>- Evan A.</span>
         </div>
-        <nav>
-            <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <!-- Home Section -->
-        <section id="home">
-            <h1>Welcome to Cinnamon Secrets</h1>
-            <p>Your go-to bakery for the most irresistible cinnamon rolls in town!</p>
-        </section>
-
-        <!-- Menu Section -->
-        <section id="menu">
-            <h2>Our Menu</h2>
-            <h2>(Click and Scroll Down for Preview)</h2>
-            <ul class="menu-items">
-                <li onclick="showImage('classic.jpeg')" class="menu-item">Classic Cinnamon Rolls</li>
-                <li onclick="showImage('pumpkin.jpg')" class="menu-item">Pumpkin Cinnamon Rolls</li>
-                <li onclick="showImage('vanilla_cp.jpg')" class="menu-item">Vanilla Cake Pops</li>
-                <li onclick="showImage('chocolate_cp.jpg')" class="menu-item">Chocolate Cake Pops</li>
-                <li onclick="showImage('candc_cp.jpg')" class="menu-item">Cookies & Cream Cake Pops</li>
-                <li onclick="showImage('rv_cp.jpg')" class="menu-item">Red Velvet Cake Pops</li>
-                <li onclick="showImage('cd_cp.jpg')" class="menu-item">Cookie Dough Cake Pops</li>
-            </ul>
-            <div class="image-display">
-                <img id="menu-image" src="" alt="Menu item image">
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <h2>About Us</h2>
-            <p>At Cinnamon Secrets, we believe in creating mouthwatering cinnamon rolls that are baked with love. Come
-                for the secrets, stay for the flavor!</p>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Us With Your Order or any Questions</h2>
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Order/Question:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit">Send</button>
-            </form>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials">
-            <h2>What Our Customers Say</h2>
-            <div class="testimonial">
-                <p>"These huge cinnamon rolls really hit the spot for me! They're perfect for gatherings or even just a hearty breakfast!" - Evan A.</p>
-            </div>
-            <div class="testimonial">
-                <p>"Cinnamon Secrets makes magic happen in every bite. I just wish I knew how they did it!" - Chris G.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Cinnamon Secrets. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.instagram.com/bakedbycinnamonsecrets?igsh=MTRocXM0dGlwa2Y5Zg==" target="_blank" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
+        <div class="testimonial">
+          <p>"Cinnamon Secrets makes magic happen in every bite. I just wish I knew how they did it!"</p>
+          <span>- Chris G.</span>
         </div>
-    </footer>
-    <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-    <script type="text/javascript">
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Cinnamon Secrets. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.instagram.com/bakedbycinnamonsecrets?igsh=MTRocXM0dGlwa2Y5Zg==" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- EmailJS Script Initialization -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
     (function(){
-        emailjs.init({
-            publicKey: "2dfz6Na_INznDegs6",
-        });
+      emailjs.init("2dfz6Na_INznDegs6");
     })();
-    </script>
+  </script>
 </body>
-
 </html>
