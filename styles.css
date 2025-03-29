@@ -26,11 +26,16 @@
     background: var(--primary);
     color: white;
     padding: 20px 0;
+    position: -wedkit-sticky; /* For Safari */
     position: sticky;
+    transition: all 0.3s ease;
     top: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  header.shrink {
+    padding: 10px 0;
   }
   header .container {
     width: 90%;
@@ -43,10 +48,14 @@
   .logo {
     height: 140px;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    transition: height 0.3s ease;
+  }
+  header.shrink .logo {
+    height: 80px;
   }
   .logo:hover {
     transform: scale(1.05);
+    transition: transform 0.2s ease;
   }
   nav {
     position: relative;
@@ -67,9 +76,22 @@
     transform: translateY(-3px);
   }
   .nav-links a {
+    display: inline-block; /* Ensures the link behaves like a block-level element */
+    padding: 5px 10px; /* Adds space inside the box */
+    border: 2px solid transparent; /* Default border */
+    border-radius: 8px; /* Rounds the corners of the box */
+    text-decoration: none; /* Removes the underline */
+    background-color: var(--accent-light); /* Default background color */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
     color: var(--primary);
     font-weight: 600;
   }
+
+  .nav-links a.active {
+    border: 2px solid var(--primary); /* Active link border color */
+    background-color: var(--accent-lighter); /* Lighter background color */
+  }
+
   .menu-toggle {
     display: none;
     background: transparent;

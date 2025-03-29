@@ -72,3 +72,22 @@ document.addEventListener("DOMContentLoaded", function () {
       navLinks.classList.remove("active");
     }
   });
+
+  let isShrunk = false;
+  let debounceTimeout = null;
+  
+  window.addEventListener("scroll", function () {
+    clearTimeout(debounceTimeout); // Clear any existing timeout
+    debounceTimeout = setTimeout(() => {
+      const header = document.querySelector("header");
+      const currentScrollY = window.scrollY;
+  
+      if (currentScrollY > 55 && !isShrunk) {
+        header.classList.add("shrink");
+        isShrunk = true;
+      } else if (currentScrollY <= 50 && isShrunk) {
+        header.classList.remove("shrink");
+        isShrunk = false;
+      }
+    }, 2000); // Delay of 2000ms (2.0s) to reduce frequent toggling
+  });  
