@@ -82,12 +82,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const header = document.querySelector("header");
       const currentScrollY = window.scrollY;
   
-      if (currentScrollY > 55 && !isShrunk) {
+      if (currentScrollY > 120 && !isShrunk) {
         header.classList.add("shrink");
         isShrunk = true;
-      } else if (currentScrollY <= 50 && isShrunk) {
+      } else if (currentScrollY <= 20 && isShrunk) {
         header.classList.remove("shrink");
         isShrunk = false;
       }
-    }, 2000); // Delay of 2000ms (2.0s) to reduce frequent toggling
+    }, 20); // Delay of 20ms (0.02s) to reduce frequent toggling
   });  
