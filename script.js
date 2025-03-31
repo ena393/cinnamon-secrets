@@ -31,11 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuItems = document.querySelectorAll(".menu-item");
     const modal = document.getElementById("image-modal");
     const modalImage = document.getElementById("modal-image");
+    const modalPricing = document.getElementById("modal-pricing");
   
     menuItems.forEach((item) => {
       item.addEventListener("click", function () {
         const imageSrc = this.getAttribute("data-image");
+        const pricingSrc = this.getAttribute("data-pricing");
         modalImage.src = imageSrc;
+        modalPricing.src = pricingSrc;
         modal.style.display = "flex";
       });
     });
