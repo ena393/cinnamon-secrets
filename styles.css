@@ -193,10 +193,10 @@ section h2 {
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  gap: 40px;
-  width: 50%;
-  max-width: 75%;
+  grid-template-columns: repeat(3, minmax(125px, 1fr));
+  gap: 25px;
+  width: 70%;
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -402,6 +402,10 @@ footer {
 
   nav .nav-links.active {
     display: flex;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
   }
 
   .menu-toggle {
