@@ -246,8 +246,8 @@ section h2 {
   cursor: pointer;
 }
 
-/* About Section */
-.about-section {
+/* Specials Section */
+.specials-section {
   background: linear-gradient(to left, var(--accent-light), var(--accent-lighter));
   text-align: center;
   padding: 80px 20px;
@@ -256,9 +256,58 @@ section h2 {
   line-height: 1.8;
 }
 
+.special-image {
+  display: block;
+  max-width: 50%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* About Section */
+.about-section {
+  background: linear-gradient(to right, var(--accent-light), var(--accent-lighter));
+  text-align: justify-center;
+  padding: 80px 100px;
+  color: var(--primary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Pricing Section */
+.pricing-section {
+  background: linear-gradient(to left, var(--accent-light), var(--accent-lighter));
+  text-align: center;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(125px, 1fr));
+  gap: 25px;
+  width: 70%;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.pricing-item {
+  background: var(--accent-light);
+  padding: 20px;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  transition: transform 0.3s, background 0.3s;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.pricing-item:hover {
+  background: var(--accent-lighter);
+  transform: translateY(-5px);
+}
+
 /* Contact Section */
 .contact-section {
-  background: linear-gradient(to left, var(--accent-light), var(--accent-lighter));
+  background: linear-gradient(to right, var(--accent-light), var(--accent-lighter));
   text-align: center;
 }
 
@@ -315,7 +364,7 @@ textarea:focus {
 
 /* Testimonials Section */
 .testimonials-section {
-  background: linear-gradient(to right, var(--accent-light), var(--accent-lighter));
+  background: linear-gradient(to left, var(--accent-light), var(--accent-lighter));
   padding: 60px 20px;
   text-align: center;
 }
@@ -404,11 +453,27 @@ footer {
     display: flex;
   }
 
+  .special-image {
+    max-width: 80%;
+  }
+
+  .about-section {
+    padding: 80px 60px;
+  }
+
   .menu-grid {
     grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
   }
 
   .menu-toggle {
+    display: block;
+  }
+
+  .pricing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  }
+
+  .pricing-toggle {
     display: block;
   }
 }
