@@ -52,7 +52,7 @@
   <!-- Main Content -->
   <main>
     <!-- Hero Section -->
-    <section id="hero" class="hero">
+    <section id="hero" class="hero" class="fade-in">
       <div class="hero-content">
         <h1>Discover Cinnamon Secrets</h1>
         <p>Where every bite tells a story of love and tradition. Experience our irresistible treats!</p>
@@ -61,7 +61,7 @@
     </section>
 
     <!-- Specials Section -->
-    <section id="specials" class="specials-section">
+    <section id="specials" class="specials-section" class="fade-in">
       <h2>Specials</h2>
       <div class="special-grid">
         <img src="flyer/easter_pricing.PNG" alt="easter_pricing" class="special-image" loading="lazy">
@@ -74,7 +74,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
+    <section id="about" class="about-section" class="fade-in">
       <h2>About Cinnamon Secrets</h2>
       <p>
         Welcome to Cinnamon Secrets!<br><br>
@@ -93,7 +93,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section">
+    <section id="testimonials" class="testimonials-section" class="fade-in">
       <h2>What Our Customers Say</h2>
       <div class="testimonials-grid">
         <div class="testimonial">
@@ -108,6 +108,26 @@
       </div>
     </section>
   </main>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+  <script>
+    // JavaScript to handle the scroll-to-top functionality
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Show the button when scrolling down
+    window.addEventListener('scroll', () => {
+      const backToTopButton = document.querySelector('.back-to-top');
+      if (window.scrollY > 200) {
+        backToTopButton.style.display = 'flex';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+  </script>
 
   <!-- Footer -->
   <footer>

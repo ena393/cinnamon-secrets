@@ -52,12 +52,12 @@
   <!-- Main Content -->
   <main>
     <!-- Menu Section -->
-    <section id="menu" class="menu-section">
+    <section id="menu" class="menu-section" class="fade-in">
       <h2>Our Menu</h2>
       <p>Click an item to view details.</p>
       <div class="menu-grid">
-        <div class="menu-item" data-image="food/classic_cr.jpeg">Classic Cinnamon Rolls</div>
-        <div class="menu-item" data-image="food/pumpkin_cr.jpg">Pumpkin Cinnamon Rolls</div>
+        <div class="menu-item" data-image="food/classic_cr.png">Classic Cinnamon Rolls</div>
+        <div class="menu-item" data-image="food/blueberry_lemon_cr.png">Blueberry Lemon Rolls</div>
         <div class="menu-item" data-image="food/vanilla_cp.jpg">Vanilla Cake Pops</div>
         <div class="menu-item" data-image="food/chocolate_cp.jpg">Chocolate Cake Pops</div>
         <div class="menu-item" data-image="food/candc_cp.jpg">Cookies & Cream Cake Pops</div>
@@ -83,7 +83,7 @@
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section">
+    <section id="pricing" class="pricing-section" class="fade-in">
       <h2>Pricing</h2>
       <p>Prices may vary based on size and customization. Please contact us for specific pricing.</p>
       <div class="pricing-grid">
@@ -93,7 +93,7 @@
           $16/quad<br>
           $5/individual roll
         </div>
-        <div class="pricing-item">Pumpkin Cinnamon Rolls:<br>
+        <div class="pricing-item">Blueberry Lemon Rolls:<br>
           $50/dozen<br>
           $28/half dozen<br>
           $18/quad<br>
@@ -109,7 +109,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section" class="fade-in">
       <h2>Order Here, or Ask Questions!</h2>
       <form id="contact-form">
         <div class="form-group">
@@ -129,6 +129,26 @@
       </form>
     </section>
   </main>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" onclick="scrollToTop()">↑</button>
+
+  <script>
+    // JavaScript to handle the scroll-to-top functionality
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Show the button when scrolling down
+    window.addEventListener('scroll', () => {
+      const backToTopButton = document.querySelector('.back-to-top');
+      if (window.scrollY > 200) {
+        backToTopButton.style.display = 'flex';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+  </script>
 
   <!-- Footer -->
   <footer>

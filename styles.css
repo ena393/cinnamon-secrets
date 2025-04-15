@@ -28,7 +28,7 @@ body {
 header {
   background: var(--hf);
   padding: 20px 0;
-  position: -wedkit-sticky;
+  position: -webkit-sticky;
   /* For Safari */
   position: sticky;
   transition: all 0.3s ease;
@@ -84,8 +84,9 @@ nav {
 }
 
 .nav-links li:hover {
-  background: var(--accent-lighter);
+  background: var(--hf);
   transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links a {
@@ -110,7 +111,7 @@ nav {
 .nav-links a.active {
   border: 2px solid var(--primary);
   /* Active link border color */
-  background-color: var(--accent-lighter);
+  background-color: var(--hf);
   /* Lighter background color */
 }
 
@@ -133,7 +134,7 @@ nav {
 .hero::after {
   content: "";
   background: url('classic_cr.jpeg') center/cover no-repeat;
-  opacity: 0.2;
+  opacity: 0.4;
   position: absolute;
   top: 0;
   left: 0;
@@ -144,6 +145,7 @@ nav {
 
 .hero-content h1 {
   font-family: 'Playfair Display', serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   font-size: 3rem;
   margin-bottom: 20px;
   color: var(--primary);
@@ -169,13 +171,35 @@ nav {
 .btn:hover {
   background: var(--accent-light);
   color: var(--primary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: var(--primary) 2px solid;
   transform: scale(1.05);
 }
 
 /* Section Common Styles */
 section {
+  position: relative;
   padding: 60px 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 1);
+  /* Start with black */
+  z-index: -1;
+  /* Place behind the content */
+  opacity: 0;
+  /* Start invisible */
+  transition: opacity 0.8s ease-in-out;
+  /* Smooth fade */
 }
 
 section h2 {
@@ -183,6 +207,23 @@ section h2 {
   text-align: center;
   margin-bottom: 20px;
   color: var(--primary);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section.fade-in::before {
+  opacity: 1;
+  /* Fade the background to visible */
 }
 
 /* Menu Section */
@@ -213,6 +254,7 @@ section h2 {
 .menu-item:hover {
   background: var(--accent-lighter);
   transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Image Modal */
@@ -303,6 +345,7 @@ section h2 {
 .pricing-item:hover {
   background: var(--accent-lighter);
   transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Contact Section */
@@ -388,6 +431,7 @@ textarea:focus {
 
 .testimonial:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial span {
@@ -395,6 +439,34 @@ textarea:focus {
   margin-top: 10px;
   font-style: italic;
   color: var(--primary);
+}
+
+/* Back to Top */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
+}
+
+body.scrolled .back-to-top {
+  display: flex;
 }
 
 /* Footer */
@@ -447,10 +519,13 @@ footer {
     gap: 10px;
     padding: 10px;
     border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
   }
 
   nav .nav-links.active {
     display: flex;
+    transform: translateX(0);
   }
 
   .special-image {

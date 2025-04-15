@@ -93,4 +93,4 @@ window.addEventListener("scroll", function () {
       isShrunk = false;
     }
   }, 20); // Delay of 20ms (0.02s) to reduce frequent toggling
-});  
+});
